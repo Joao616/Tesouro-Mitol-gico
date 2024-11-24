@@ -1,0 +1,162 @@
+/* Definições gerais do body */
+body {
+    background-color: #1D4221; /* Verde escuro, remete à floresta */
+    color: white;
+    font-family: "Bai Jamjuree", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajustado para ocupar toda a altura da tela */
+    margin: 0;
+    overflow: hidden;
+    background-image: url('img/temple-background.jpg'); /* Imagem de fundo temática */
+    background-size: cover;
+    background-position: center;
+    animation: fadeInBackground 2s ease-out; /* Animação para o fundo */
+}
+
+/* Animação para o fundo de fade-in */
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilização dos botões */
+button {
+    background-color: #64A712; /* Verde mítico */
+    color: white;
+    font-family: "Bai Jamjuree", sans-serif;
+    border: 2px solid #fff; /* Bordas brancas */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #8DCA15; /* Efeito de hover com tom mais claro */
+    transform: scale(1.05); /* Efeito de aumento no tamanho */
+}
+
+/* Estilo para a navegação entre as etapas (passos) */
+.passo {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.passo.ativo {
+    display: block;
+    opacity: 1;
+}
+
+main {
+    text-align: center;
+    max-width: 90%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com opacidade para destacar o conteúdo */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Sombra para criar profundidade */
+}
+
+/* Estilo das imagens */
+img {
+    max-width: 80%; /* Ajusta as imagens para ficarem proporcionais */
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Definição das dicas que aparecerão durante a jornada */
+.dica {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFD700; /* Ouro, para dar um toque mítico */
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    z-index: 100;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    animation: fadeInDica 1s ease-out;
+}
+
+/* Animação para a dica */
+@keyframes fadeInDica {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Estilo de desaparecimento da dica */
+.dica.desaparecer {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+    transition: opacity 0.5s ease-out;
+}
+
+/* Efeito de transição para o texto */
+h1, p {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Estilo para o título principal */
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #FFD700; /* Ouro */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra dourada */
+    margin-bottom: 30px;
+}
+
+/* Estilo das escolhas (botões) com foco nas imagens */
+button:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 10px 2px #FFD700; /* Adiciona um brilho dourado */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .passo {
+        padding: 10px;
+    }
+
+    img {
+        max-width: 95%; /* Ajusta a largura da imagem para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .dica {
+        font-size: 16px;
+    }
+}
